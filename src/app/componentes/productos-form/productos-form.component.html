@@ -1,0 +1,44 @@
+<h3>Nuevo Producto</h3>
+<form (ngSubmit)="grabarProducto()">
+
+
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Codigo</span>
+    </div>
+    <input name="productoCodigo" [(ngModel)]="nuevoProducto.codigo" type="text" class="form-control" aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+    </div>
+    <input name="productoDescripcion" [(ngModel)]="nuevoProducto.descripcion" type="text" class="form-control" aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Precio Unitario</span>
+    </div>
+    <input  name="productoPU" [(ngModel)]="nuevoProducto.pu" type="text" class="form-control" aria-label="Sizing example input"
+      aria-describedby="inputGroup-sizing-sm">
+  </div>
+  <!--
+  <label for="productoCodigo">Codigo</label><br>
+  <input type="number" name="productoCodigo" [(ngModel)]="nuevoProducto.codigo" placeholder="producto codigo"><br>
+
+
+  <label for="productoDescripcon">Nombre</label><br>
+  <input type="text" name="productoDescripcion" [(ngModel)]="nuevoProducto.descripcion"
+    placeholder="producto descripcion"><br>
+
+
+  <label for="productoPU">Precio Unitario</label><br>
+  <input type="number" name="productoPU" [(ngModel)]="nuevoProducto.pu" placeholder="producto precio unitario"><br>
+-->
+  <button class="btn btn-success">Grabar</button>
+
+</form>

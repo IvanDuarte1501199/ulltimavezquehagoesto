@@ -1,0 +1,86 @@
+<div style="margin: 10px 10px;">
+  <h3>Nueva Factura</h3>
+  <form (ngSubmit)="grabarFactura()">
+
+    <div>
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Tipo</span>
+        </div>
+        <input name="Tipo" [(ngModel)]="nuevaFactura.tipo" type="text" class="form-control"
+          aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Numero Factura</span>
+        </div>
+        <input name="Numero" [(ngModel)]="nuevaFactura.numero" type="text" class="form-control"
+          aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Punto Venta</span>
+        </div>
+        <input name="ptoVta" [(ngModel)]="nuevaFactura.ptoVenta" type="number" class="form-control"
+          aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+
+      <!--
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Cliente</span>
+        </div>
+        <input name="ptoVta" [(ngModel)]="nuevaFactura.clienteId " type="number" class="form-control"
+          aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+        -->
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Cliente</span>
+        </div>
+        <select name="clienteId" [(ngModel)]="nuevaFactura.clienteId" >
+          <option [ngValue]="cli.id" *ngFor="let cli of listaClientes" >{{cli.nombre}}</option>
+        </select>
+      </div>
+
+    </div>
+
+
+
+
+    <div style="margin: 0px 80px;">
+      <button class="btn btn-success" >Siguiente</button>
+    </div>
+    
+
+    <!--
+    <app-items-list></app-items-list>
+    
+    <label for="Tipo">Tipo</label><br>
+    <input type="text" name="Tipo" [(ngModel)]="nuevaFactura.tipo" placeholder="Tipo Factura"><br>
+
+    <label for="Numero">Numero Factura</label><br>
+    <input type="text" name="Numero" [(ngModel)]="nuevaFactura.numero" placeholder="Número factura"><br>
+
+    <label for="ptoVta">Punto Venta</label><br>
+    <input type="number" name="ptoVta" [(ngModel)]="nuevaFactura.ptoVenta" placeholder="Punto Venta"><br>
+
+    <label for="ClienteID">Cliente Id</label><br>
+    <input type="number" name="ClienteID" [(ngModel)]="nuevaFactura.clienteId" placeholder="Cliente Id"><br>
+
+  -->
+
+
+
+  </form>
+  <div style="margin: -37.5px 0px;">
+    <a class="btn btn-dark" routerLink="/facturas">Atras</a><br>
+  </div>
+
+
+</div>

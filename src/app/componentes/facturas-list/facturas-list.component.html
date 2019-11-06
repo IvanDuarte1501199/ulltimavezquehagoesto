@@ -1,0 +1,37 @@
+<div>
+  <h3 style="text-align: center;">Listado Facturas</h3>
+  <table class="table" style="border: solid 1px;">
+    <tr>
+      <th>Id(columna temporal)</th>
+      <th>Tipo</th>
+      <th>Fecha</th>
+      <th>Número</th>
+      <th>Punto Venta</th>
+      <th>Cliente id</th>
+      <th>Cliente nombre</th>
+    </tr>
+    <tr *ngFor="let factura of _facturaRepoService.listadoFacturas">
+      <td>{{ factura.id }}</td>
+      <td>{{ factura.tipo }}</td>
+      <td>{{factura.fecha }}</td>
+      <td>{{ factura.numero }}</td>
+      <td>{{factura.ptoVenta }}</td>
+      <td>{{factura.clienteId }}</td>
+      <td (click)="obtenerCliente(clienteId)"></td>
+      <td class="btn btn-danger" (click)="borrarFactura(factura.id)">Borrar</td>
+      <td (click)="mostrarDetalle(factura.id)" class="btn btn-warning">Mostrar Detalle</td>
+    </tr>
+  </table>
+  <div style="margin: 0px 80px;">
+    <a class="btn btn-success" routerLink="/facturas-form">Nuevo</a><br>
+  </div>
+
+
+  <div style="margin: -37.5px 0px;">
+    <a class="btn btn-dark" routerLink="/">Atras</a><br>
+  </div>
+
+  <h3> {{ facturaSeleccionada | json }}</h3>
+
+
+</div>

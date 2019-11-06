@@ -1,0 +1,25 @@
+<div>
+  <h3 style="text-align: center;">Listado Productos</h3>
+  <table class="table" style="border: solid 1px;">
+    <tr>
+      <th>Codigo</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+    </tr>
+    <tr *ngFor="let producto of _productoRepoService.listadoProductos">
+      <th>{{ producto.codigo }}</th>
+      <th>{{ producto.descripcion }}</th>
+      <th>{{producto.pu}}</th>
+      <td class="btn btn-danger" (click)="borrarProducto(producto.id)">Borrar</td>
+      <td class="btn btn-warning" (click)="formulario.editarProducto(producto.id)">Editar</td>
+    </tr>
+  </table>
+
+  <div style="margin: 40px  0px;">
+    <app-productos-form #formulario></app-productos-form>
+  </div>
+  <div  style="margin: -77px 100px;">
+    <a class="btn btn-dark" routerLink="/">Atras</a><br>
+  </div>
+
+</div>

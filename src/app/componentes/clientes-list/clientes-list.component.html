@@ -1,0 +1,29 @@
+<div>
+  <h3 style="text-align: center;">Listado Clientes</h3>
+
+  <table class="table" style="border: solid 1px;">
+    <tr>
+      <th>Nombre</th>
+      <th>Direccion</th>
+      <th>Cuit</th>
+    </tr>
+    <tr *ngFor="let cliente of _clienteRepoService.listadoClientes">
+      <td>{{ cliente.nombre }}</td>
+      <td>{{ cliente.direccion }}</td>
+      <td>{{cliente.cuit}}</td>
+      <td class="btn btn-danger" (click)="borrarCliente(cliente.id)">Borrar</td>
+      <td class="btn btn-warning" (click)="formulario.editarCliente(cliente.id)">Editar</td>
+    </tr>
+  </table>
+
+  <div style="margin: 40px  0px;">
+    <app-clientes-form #formulario></app-clientes-form>
+  </div>
+  <div style="margin: -77px 100px;">
+    <a class="btn btn-dark" routerLink="/">Atras</a><br>
+  </div>
+
+  
+
+
+</div>

@@ -1,0 +1,78 @@
+<h3>Nuevo Item</h3>
+
+<form (ngSubmit)="grabarItem()">
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad</span>
+    </div>
+    <input name="itemCantidad" [(ngModel)]="nuevoItem.cantidad" type="number" class="form-control"
+      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Codigo</span>
+    </div>
+    <input name="itemCodigo" [(ngModel)]="nuevoItem.codigo" type="text" class="form-control"
+      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Descripcion</span>
+    </div>
+    <input name="itemDescripcion" [(ngModel)]="nuevoItem.descripcion" type="text" class="form-control"
+      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Precio Unitario</span>
+    </div>
+    <input name="itemPU" [(ngModel)]="nuevoItem.pu" type="number" class="form-control"
+      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">IVA</span>
+    </div>
+    <input name="itemIVA" [(ngModel)]="nuevoItem.IVA" type="number" class="form-control"
+      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Subtotal</span>
+    </div>
+    <input name="itemSubtotal" [(ngModel)]="nuevoItem.subtotal" type="number" class="form-control"
+      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">productoId</span>
+    </div>
+    <!-- 
+    <input name="itemProductoId" [(ngModel)]="nuevoItem.productoId" type="number" class="form-control"
+      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    -->
+    <select>
+      <option *ngFor="let prod of listaProductos" value="prod.descripcion">{{prod.codigo}}</option>
+    </select>
+
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">facturaId</span>
+    </div>
+    <h6>{{idFactura}}</h6>
+    <!--
+        <input name="itemFacturaId" [(ngModel)]="nuevoItem.facturaId" type="text" class="form-control"
+          aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="idFactura">
+    -->
+  </div>
+
+  <button class="btn btn-success">Añadir</button><br>
+</form>

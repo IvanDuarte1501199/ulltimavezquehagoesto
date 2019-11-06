@@ -1,0 +1,40 @@
+<h3>Nuevo Cliente</h3>
+<form (ngSubmit)="grabarCliente()">
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+    </div>
+    <input name="clienteNombre" [(ngModel)]="nuevoCliente.nombre" type="text" class="form-control"
+      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Direccion</span>
+    </div>
+    <input name="clienteDireccion" [(ngModel)]="nuevoCliente.direccion" type="text" class="form-control"
+      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-sm">CUIT</span>
+    </div>
+    <input name="clienteCUIT" [(ngModel)]="nuevoCliente.cuit" type="text" class="form-control"
+      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  </div>
+  <button class="btn btn-success">Grabar</button><br>
+  <!--
+
+  <label for="ClienteNombre">Nombre</label><br>
+  <input type="text" name="clienteNombre" [(ngModel)]="nuevoCliente.nombre" placeholder="Nombre cliente"><br><br>
+
+  <label for="clienteDireccion">Direccion</label><br>
+  <input type="text" name="clienteDireccion" [(ngModel)]="nuevoCliente.direccion"
+    placeholder="Direccion cliente"><br><br>
+
+  <label for="clienteCUIT">CUIT</label><br>
+  <input type="number" name="clienteCUIT" [(ngModel)]="nuevoCliente.cuit" placeholder="CUIT cliente"><br><br>
+-->
+
+</form>

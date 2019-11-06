@@ -1,0 +1,97 @@
+{
+  "items": [],
+  "facturas": [
+    {
+      "id": 2,
+      "tipo": "Tipo Generico de Factura",
+      "fecha": "3/11/2019",
+      "numero": "123457",
+      "ptoVenta": 1,
+      "clienteId": 45
+    },
+    {
+      "id": 3,
+      "tipo": "c",
+      "fecha": "6/11/2019",
+      "numero": "2",
+      "ptoVenta": 2,
+      "clienteId": 42
+    }
+  ],
+  "productos": [
+    {
+      "id": 3,
+      "codigo": 1011,
+      "descripcion": "Pañales Huggies x24u",
+      "pu": 345
+    },
+    {
+      "id": 4,
+      "codigo": 150,
+      "descripcion": "Sanguches Tia Rosa x6u",
+      "pu": 63.5
+    },
+    {
+      "id": 5,
+      "codigo": 200,
+      "descripcion": "Coca Cola Zero 2.25L",
+      "pu": 75
+    },
+    {
+      "id": 6,
+      "codigo": 250,
+      "descripcion": "Play Station 4 Slim blanca 500gb",
+      "pu": 27700
+    },
+    {
+      "id": 7,
+      "codigo": 130,
+      "descripcion": "Coca Cola 2.5L",
+      "pu": "125"
+    },
+    {
+      "id": 10,
+      "codigo": 444,
+      "descripcion": "Milanesa Cerdo kg",
+      "pu": 179
+    }
+  ],
+  "clientes": [
+    {
+      "id": 41,
+      "nombre": "Santiago Ferlatti",
+      "direccion": "Courreges 447",
+      "cuit": "20412480347"
+    },
+    {
+      "id": 42,
+      "nombre": "Ivan Gabriel Duarte",
+      "direccion": "Francisco Ramirez 4025",
+      "cuit": "20416980507"
+    },
+    {
+      "id": 43,
+      "nombre": "Carlos Nahuel Kliphan",
+      "direccion": "Aldea Brasilera 705",
+      "cuit": "20426785467"
+    },
+    {
+      "id": 44,
+      "nombre": "Juan Manuel Altamirano Kuttel",
+      "direccion": "Coronel Martinez 1384",
+      "cuit": "20361234567"
+    },
+    {
+      "id": 45,
+      "nombre": "Juan Ignacio Heis",
+      "direccion": "Bernardo O'Higgins 1783",
+      "cuit": "20429915647"
+    },
+    {
+      "id": 46,
+      "nombre": "Juan Carlos Pelotuda",
+      "direccion": "Pizzeria Los Hijos de Puta",
+      "cuit": "22239485379"
+    }
+  ]
+}
