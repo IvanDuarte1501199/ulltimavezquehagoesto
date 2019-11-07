@@ -24,13 +24,17 @@ export class ClientesFormComponent implements OnInit {
           (response) => {
             this.edicion = false;
             this.nuevoCliente = new cliente('', '', '');
+            this._clienteRepoService.getAllClientes();
           }
         );
     } else {
       this._clienteRepoService.agregarCliente(this.nuevoCliente)
-        .subscribe(
-          (response) => console.log('se creo el cliente: ', response)
-        );
+        .subscribe((response) => {
+          console.log('se creo el cliente: ', response);
+          this.nuevoCliente = new cliente('', '', '');
+          this._clienteRepoService.getAllClientes();
+
+        });
     }
   }
 

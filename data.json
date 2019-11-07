@@ -1,5 +1,16 @@
 {
-  "items": [],
+  "items": [
+    {
+      "id": 1,
+      "cantidad": 2,
+      "descripcion": "",
+      "pu": 0,
+      "IVA": "21.0",
+      "productoId": 4,
+      "facturaId": 0,
+      "subtotal": 0
+    }
+  ],
   "facturas": [
     {
       "id": 2,
@@ -11,6 +22,54 @@
     },
     {
       "id": 3,
+      "tipo": "c",
+      "fecha": "6/11/2019",
+      "numero": "2",
+      "ptoVenta": 2,
+      "clienteId": 42
+    },
+    {
+      "id": 11,
+      "tipo": "1",
+      "fecha": "6/11/2019",
+      "numero": "2",
+      "ptoVenta": 1,
+      "clienteId": 48
+    },
+    {
+      "id": 17,
+      "tipo": "12",
+      "fecha": "6/11/2019",
+      "numero": "012",
+      "ptoVenta": 12,
+      "clienteId": 44
+    },
+    {
+      "id": 18,
+      "tipo": "12",
+      "fecha": "6/11/2019",
+      "numero": "4",
+      "ptoVenta": 4,
+      "clienteId": 46
+    },
+    {
+      "id": 19,
+      "tipo": "c",
+      "fecha": "6/11/2019",
+      "numero": "5",
+      "ptoVenta": 5,
+      "clienteId": 43
+    },
+    {
+      "id": 20,
+      "tipo": "c",
+      "fecha": "6/11/2019",
+      "numero": "2",
+      "ptoVenta": 2,
+      "clienteId": 42
+    },
+    {
+      "id": 21,
       "tipo": "c",
       "fecha": "6/11/2019",
       "numero": "2",
@@ -92,6 +151,18 @@
       "nombre": "Juan Carlos Pelotuda",
       "direccion": "Pizzeria Los Hijos de Puta",
       "cuit": "22239485379"
+    },
+    {
+      "id": 47,
+      "nombre": "ivanito kuartea",
+      "direccion": "ramirez",
+      "cuit": "4124124124"
+    },
+    {
+      "id": 48,
+      "nombre": "guillermo yarull alba",
+      "direccion": "yarulmin 2014",
+      "cuit": "231231231412"
     }
   ]
 }

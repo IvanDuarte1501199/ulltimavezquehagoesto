@@ -4,23 +4,29 @@ import { FacturaRepoService } from 'src/app/servicios/factura-repo.service';
 import { cliente } from 'src/app/modelo/cliente';
 import { ClienteRepoService } from 'src/app/servicios/cliente-repo.service';
 import { RouterLink } from '@angular/router';
+import { timeout } from 'q';
 
 @Component({
   selector: 'app-facturas-form',
   templateUrl: './facturas-form.component.html',
   styleUrls: ['./facturas-form.component.css']
+
 })
 export class FacturasFormComponent implements OnInit {
 
   nuevaFactura: factura = new factura('', 0, 0, 0);
   edicion: boolean = false;
   listaClientes: cliente[] = [];
-  constructor(private _facturaRepoService: FacturaRepoService,
-    private _clientesRepoService: ClienteRepoService) {
+  constructor(private _facturaRepoService: FacturaRepoService, private _clientesRepoService: ClienteRepoService) {
+    this.cargarListaCliente();
+  }
+
+  async cargarListaCliente() {
+    this.listaClientes = await this._clientesRepoService.devolverClientes();
+    
   }
 
   ngOnInit() {
-    this.listaClientes = this._clientesRepoService.devolverClientes();
   }
 
   grabarFactura() {
@@ -37,7 +43,7 @@ export class FacturasFormComponent implements OnInit {
         .subscribe(
           (response) => console.log('se creo la factura: ', response)
         );
-        window.location.href = "/items"
+      window.location.href = '/items';
     }
   }
 

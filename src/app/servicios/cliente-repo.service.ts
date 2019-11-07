@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { cliente } from '../modelo/cliente';
 import { HttpClient } from '@angular/common/http';
+import { timer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class ClienteRepoService {
     .subscribe(
       (data) => this.listadoClientes = data
     );
-    return this.listadoClientes
+    return this.listadoClientes;
   }
 
   getClienteById(clienteId: number) {

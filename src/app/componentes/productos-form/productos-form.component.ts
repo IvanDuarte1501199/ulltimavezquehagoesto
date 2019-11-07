@@ -18,7 +18,7 @@ export class ProductosFormComponent implements OnInit {
   }
 
   grabarProducto() {
-    if(this.edicion) {
+    if (this.edicion) {
       this._productoRepoService.actualizarProducto(this.nuevoProducto)
         .subscribe(
           (response) => {
@@ -33,7 +33,7 @@ export class ProductosFormComponent implements OnInit {
           console.log('Se creo el producto: ', response);
           this.nuevoProducto = new producto('', '', 0);
           this._productoRepoService.getAllProductos();
-        })
+        });
     }
   }
 

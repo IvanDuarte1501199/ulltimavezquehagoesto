@@ -11,7 +11,7 @@ import { cliente } from 'src/app/modelo/cliente';
 })
 export class FacturasListComponent implements OnInit {
 
-  
+
   facturaSeleccionada: factura;
   clientePorId: cliente;
 
@@ -22,23 +22,26 @@ export class FacturasListComponent implements OnInit {
   }
   obtenerCliente(clienteId: number) {
     this._clienteRepoService.getClienteById(clienteId)
-    .subscribe(
-      (fac) => this.clientePorId = fac
-    );
-    return this.clientePorId
+      .subscribe(
+        (fac) => this.clientePorId = fac
+      );
+    return this.clientePorId;
   }
 
   obtenerFactura(facturaId: number) {
     this._facturaRepoService.getFacturaById(facturaId)
-    .subscribe(
-      (fac) => this.facturaSeleccionada = fac
-    );
+      .subscribe(
+        (fac) => this.facturaSeleccionada = fac
+      );
   }
 
   borrarFactura(facturaId: number) {
     this._facturaRepoService.borrarFactura(facturaId)
-    .subscribe(
-      (response) => console.log('se borro la factura ', response)
-    );
+      .subscribe(
+        (response) => {
+          console.log('se borro la factura ', response);
+          this._facturaRepoService.getAllFacturas();
+        }
+      );
   }
 }
