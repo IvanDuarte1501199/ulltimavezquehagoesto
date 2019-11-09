@@ -12,7 +12,8 @@
       <th>Id Producto</th>
       <th>Id Factura</th>
     </tr>
-    <tr *ngFor="let item of _itemRepoService.listadoItems">
+    <tr *ngFor="let item of _itemRepoService.listaFiltrada" >
+
       <td>{{ item.id }}</td>
       <td>{{ item.cantidad }}</td>
       <td>{{ item.descripcion }}</td>
@@ -23,16 +24,14 @@
       <td>{{ item.facturaId }}</td>
       <td class="btn btn-danger" (click)="borrarItem( item.id)">Borrar</td>
       <td class="btn btn-warning" (click)="formulario.editarItem(item.id)">Editar</td>
+
+
     </tr>
   </table>
 
   <div style="margin: 40px  0px;">
     <app-items-form #formulario></app-items-form>
   </div>
-  <div style="margin: -77px 100px;">
-    <a class="btn btn-dark" routerLink="/">Atras</a><br>
-  </div>
 
-  <h3> {{ facturaSeleccionada | json }}</h3>
 
 </div>

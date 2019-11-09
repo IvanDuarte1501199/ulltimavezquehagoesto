@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemRepoService } from 'src/app/servicios/item-repo.service';
 import { item } from 'src/app/modelo/item';
+import { FacturaRepoService } from 'src/app/servicios/factura-repo.service';
 
 @Component({
   selector: 'app-items-list',
@@ -11,11 +12,17 @@ export class ItemsListComponent implements OnInit {
 
   itemSeleccionado: item;
 
-  constructor(private _itemRepoService: ItemRepoService) { }
+
+  constructor(private _itemRepoService: ItemRepoService, private _facturaRepoService: FacturaRepoService) {
+    this._itemRepoService.getAllItems();
+    this._facturaRepoService.getAllFacturas();
+  }
 
   ngOnInit() {
-    this._itemRepoService.getAllItems();
+    
   }
+
+  
 
   obtenerItem(itemId: number) {
     this._itemRepoService.getItemById(itemId)
@@ -30,6 +37,7 @@ export class ItemsListComponent implements OnInit {
         (response) => {
           console.log('se borro el item ', response);
           this._itemRepoService.getAllItems();
+          this._itemRepoService.getListaFIltrada(this._facturaRepoService.getIdUltimaFactura())
         }
       );
   }

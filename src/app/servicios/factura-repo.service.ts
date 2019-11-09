@@ -55,13 +55,9 @@ export class FacturaRepoService {
 
   getIdUltimaFactura() {
     let maxId = -1;
-    console.log('antes del for');
     this.getAllFacturas();
     for (let element of this.devolverFacturas()) {
-      console.log('dentro del for');
       if (element.id > maxId) {
-        console.log(element.id);
-        console.log(maxId);
         maxId = element.id;
       }
     }

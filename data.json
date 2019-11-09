@@ -3,38 +3,140 @@
     {
       "id": 1,
       "cantidad": 2,
+      "descripcion": "Pañales Huggies x24u",
+      "pu": 345,
+      "IVA": "10.5",
+      "productoId": 3,
+      "facturaId": 4,
+      "subtotal": 762.4499999999999
+    },
+    {
+      "id": 2,
+      "cantidad": 42,
+      "descripcion": "Pañales Huggies x24u",
+      "pu": 345,
+      "IVA": "21.0",
+      "productoId": 3,
+      "facturaId": 4,
+      "subtotal": 17532.899999999998
+    },
+    {
+      "id": 3,
+      "cantidad": 24,
       "descripcion": "Sanguches Tia Rosa x6u",
       "pu": 63.5,
       "IVA": "10.5",
       "productoId": 4,
-      "facturaId": -1,
-      "subtotal": 140.335
+      "facturaId": 4,
+      "subtotal": 1684.02
+    },
+    {
+      "id": 4,
+      "cantidad": 4,
+      "descripcion": "Sanguches Tia Rosa x6u",
+      "pu": 63.5,
+      "IVA": "21.0",
+      "productoId": 4,
+      "facturaId": 4,
+      "subtotal": 307.34
+    },
+    {
+      "id": 5,
+      "cantidad": 42,
+      "descripcion": "Sanguches Tia Rosa x6u",
+      "pu": 63.5,
+      "IVA": "10.5",
+      "productoId": 4,
+      "facturaId": 5,
+      "subtotal": 2947.0350000000003
+    },
+    {
+      "id": 6,
+      "cantidad": 421,
+      "descripcion": "Coca Cola Zero 2.25L",
+      "pu": 75,
+      "IVA": "21.0",
+      "productoId": 5,
+      "facturaId": 5,
+      "subtotal": 38205.75
+    },
+    {
+      "id": 7,
+      "cantidad": 421,
+      "descripcion": "Pañales Huggies x24u",
+      "pu": 345,
+      "IVA": "10.5",
+      "productoId": 3,
+      "facturaId": 5,
+      "subtotal": 160495.72499999998
+    },
+    {
+      "id": 8,
+      "cantidad": 2,
+      "descripcion": "Sanguches Tia Rosa x6u",
+      "pu": 63.5,
+      "IVA": "21.0",
+      "productoId": 4,
+      "facturaId": 9,
+      "subtotal": 153.67
     }
   ],
   "facturas": [
     {
-      "id": 2,
-      "tipo": "Tipo Generico de Factura",
-      "fecha": "3/11/2019",
-      "numero": "123457",
-      "ptoVenta": 1,
-      "clienteId": 45
+      "id": 4,
+      "tipo": "421",
+      "fecha": "9/11/2019",
+      "numero": "21",
+      "ptoVenta": 421,
+      "clienteId": 42
     },
     {
-      "id": 3,
-      "tipo": "32",
+      "id": 5,
+      "tipo": "c",
       "fecha": "9/11/2019",
       "numero": "232",
-      "ptoVenta": 321,
+      "ptoVenta": 1,
       "clienteId": 41
     },
     {
-      "id": 4,
-      "tipo": "c",
+      "id": 6,
+      "tipo": "2",
       "fecha": "9/11/2019",
-      "numero": "4",
-      "ptoVenta": 4,
-      "clienteId": 42
+      "numero": "2",
+      "ptoVenta": 2,
+      "clienteId": 43
+    },
+    {
+      "id": 7,
+      "tipo": "24",
+      "fecha": "9/11/2019",
+      "numero": "241",
+      "ptoVenta": 24,
+      "clienteId": 43
+    },
+    {
+      "id": 8,
+      "tipo": "24",
+      "fecha": "9/11/2019",
+      "numero": "412",
+      "ptoVenta": 421,
+      "clienteId": 45
+    },
+    {
+      "id": 9,
+      "tipo": "24",
+      "fecha": "9/11/2019",
+      "numero": "024",
+      "ptoVenta": 1,
+      "clienteId": 43
+    },
+    {
+      "id": 10,
+      "tipo": "321",
+      "fecha": "9/11/2019",
+      "numero": "213",
+      "ptoVenta": 321,
+      "clienteId": 43
     }
   ],
   "productos": [
@@ -67,12 +169,6 @@
       "codigo": 130,
       "descripcion": "Coca Cola 2.5L",
       "pu": "125"
-    },
-    {
-      "id": 10,
-      "codigo": 444,
-      "descripcion": "Milanesa Cerdo kg",
-      "pu": 179
     }
   ],
   "clientes": [

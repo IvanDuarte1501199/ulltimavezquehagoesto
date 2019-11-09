@@ -2,16 +2,13 @@
   <h3 style="text-align: center;">Listado Facturas</h3>
   <table class="table" style="border: solid 1px;">
     <tr>
-      <th>Id(columna temporal)</th>
       <th>Tipo</th>
       <th>Fecha</th>
       <th>Número</th>
       <th>Punto Venta</th>
       <th>Cliente id</th>
-      <th>Cliente nombre</th>
     </tr>
     <tr *ngFor="let factura of _facturaRepoService.listadoFacturas">
-      <td>{{ factura.id }}</td>
       <td>{{ factura.tipo }}</td>
       <td>{{factura.fecha }}</td>
       <td>{{ factura.numero }}</td>
@@ -30,7 +27,42 @@
     <a class="btn btn-dark" routerLink="/">Atras</a><br>
   </div>
 
-  <h3> {{ facturaSeleccionada | json }}</h3>
+  <div id="GranDiv" *ngIf="mostrandoDetalle === true" style="margin: 50px 10px;">
+    <div>
+      <span style="margin: 50px 10px;">Numero: {{facturaSeleccionada.numero}}</span>
+      <span style="margin: 50px 10px;">Tipo: {{facturaSeleccionada.tipo}} </span>
+      <span style="margin: 50px 10px;">Fecha: {{facturaSeleccionada.fecha}} </span>
+      <!-- <p>Cliente: {{facturaSeleccionada.}} </p> -->
+    </div>
+    <div>
+      <table class="table" style="border: solid 1px;">
+        <tr>
+          <th>Cantidad</th>
+          <th>descripcion</th>
+          <th>Precio unitario</th>
+          <th>IVA</th>
+          <th>Subtotal</th>
+          <th>Id Producto</th>
+          <th>Id Factura</th>
+        </tr>
+        <tr *ngFor="let item of _itemRepoService.listaFiltrada">
+
+          <td>{{ item.cantidad }}</td>
+          <td>{{ item.descripcion }}</td>
+          <td>{{ item.pu }}</td>
+          <td>{{ item.IVA }}</td>
+          <td>{{ item.subtotal }}</td>
+          <td>{{ item.productoId }}</td>
+          <td>{{ item.facturaId }}</td>
+
+
+        </tr>
+      </table>
+    </div>
+
+
+
+  </div>
 
 
 </div>

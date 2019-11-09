@@ -19,36 +19,32 @@ export class ItemsFormComponent implements OnInit {
   listaFacturas: factura[] = [];
   constructor(private _itemRepoService: ItemRepoService,
     private _productsRepoService: ProductoRepoService,
-    private _facturaRepoSerice: FacturaRepoService) { }
+    private _facturaRepoService: FacturaRepoService,) {
+      this._facturaRepoService.getAllFacturas();
+     }
 
   ngOnInit() {
     this.listaProductos = this._productsRepoService.devolverProductos();
-    
   }
 
   grabarItem() {
-
-
+    
     this._productsRepoService.getProductoById(this.nuevoItem.productoId)
       .subscribe(
         (pd) => {
-
-
-
           if (this.edicion) {
             this._itemRepoService.actualizarItem(this.nuevoItem)
               .subscribe(
                 (response) => {
                   this.edicion = false;
                   this.nuevoItem = new item(0, '', 0, 0, 0, 0);
+                  this._itemRepoService.getListaFIltrada(this._facturaRepoService.getIdUltimaFactura())
                   this._itemRepoService.getAllItems();
                 }
               );
           } else {
-
-            this._facturaRepoSerice.getAllFacturas();
-            this.nuevoItem.facturaId = this._facturaRepoSerice.getIdUltimaFactura();
-
+            this.nuevoItem.facturaId = this._facturaRepoService.getIdUltimaFactura();
+ 
             this.nuevoItem.descripcion = pd.descripcion;
             this.nuevoItem.pu = pd.pu;
             this.nuevoItem.subtotal = this.nuevoItem.calcularSubtotal();
@@ -57,13 +53,15 @@ export class ItemsFormComponent implements OnInit {
                 (response) => {
                   console.log('se creo el item: ', response);
                   this.nuevoItem = new item(0, '', 0, 0, 0, 0);
+                  this._itemRepoService.getListaFIltrada(this._facturaRepoService.getIdUltimaFactura())
                   this._itemRepoService.getAllItems();
                 }
               );
           }
+          
         }
       );
-
+      
 
   }
 
