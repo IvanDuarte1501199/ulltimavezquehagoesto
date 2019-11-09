@@ -17,7 +17,6 @@
       <td>{{ factura.numero }}</td>
       <td>{{factura.ptoVenta }}</td>
       <td>{{factura.clienteId }}</td>
-      <td (click)="obtenerCliente(clienteId)"></td>
       <td class="btn btn-danger" (click)="borrarFactura(factura.id)">Borrar</td>
       <td (click)="mostrarDetalle(factura.id)" class="btn btn-warning">Mostrar Detalle</td>
     </tr>

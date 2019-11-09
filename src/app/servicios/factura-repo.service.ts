@@ -32,13 +32,34 @@ export class FacturaRepoService {
     return this._httpClient.put(`http://localhost:3000/facturas/${factura.id}`, factura);
   }
 
-  getIdUltimaFactura() {
+
+  devolverFacturas() {
+    this._httpClient.get<factura[]>('http://localhost:3000/facturas')
+    .subscribe(
+      (data) => this.listadoFacturas = data
+    );
+    return this.listadoFacturas;
+  }
+
+ 
+  getIdUltimaFactura(listaFact: factura[]) {
     let maxId = -1;
+    console.log('antes del for');
+    for (let element of listaFact) {
+      console.log('dentro del for');
+      if (element.id > maxId) {
+        console.log(element.id);
+        console.log(maxId);
+        maxId = element.id;
+      }
+    }
+    /*
     this.listadoFacturas.forEach(element => {
       if (element.id > maxId) {
         maxId = element.id;
       }
     });
+    */
     return maxId;
   }
 }

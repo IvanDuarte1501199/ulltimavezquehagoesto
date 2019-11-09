@@ -9,7 +9,7 @@ export class item {
     productoId: number;
     facturaId: number;
 
-    constructor(cantidad: number, descripcion: string, pu: number,IVA: number,productoId: number, facturaId: number) {
+    constructor(cantidad: number, descripcion: string, pu: number, IVA: number, productoId: number, facturaId: number) {
         this.id = this.id++;
         this.cantidad = cantidad;
         this.descripcion = descripcion;
@@ -17,7 +17,11 @@ export class item {
         this.IVA = IVA;
         this.productoId = productoId;
         this.facturaId = facturaId;
-        this.subtotal = IVA * pu ;
+
     }
+    calcularSubtotal() {
+        return this.cantidad * (this.pu * (1+(this.IVA / 100)));
+    }
+
 
 }

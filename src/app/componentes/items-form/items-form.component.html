@@ -5,10 +5,10 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad</span>
     </div>
-    <input name="itemCantidad" [(ngModel)]="nuevoItem.cantidad" type="number" class="form-control" aria-label="Sizing example input"
-      aria-describedby="inputGroup-sizing-sm">
+    <input name="itemCantidad" [(ngModel)]="nuevoItem.cantidad" type="number" class="form-control"
+      aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
   </div>
-<!--       SELECT IVAN          -->
+  <!--       SELECT IVA           -->
   <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-sm">IVA</span>
@@ -18,15 +18,19 @@
       <option>21.0</option>
     </select>
   </div>
-<!--       SELECT PRODUCTO          -->
+  <!--       SELECT PRODUCTO          -->
   <div class="input-group input-group-sm mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-sm">Producto</span>
     </div>
-    <select name="productoId" [(ngModel)]="nuevoItem.productoId" value=prod.id>
-      <option [ngValue]="prod.id" *ngFor="let prod of _productsRepoService.listadoProductos">{{prod.descripcion}}</option>
+    <select name="productoId" [(ngModel)]="nuevoItem.productoId" >
+      <option [ngValue]="prod.id" *ngFor="let prod of _productsRepoService.listadoProductos">{{prod.descripcion}}
+      </option>
     </select>
   </div>
+
+
+
 
   <button class="btn btn-success">Grabar</button><br>
 </form>

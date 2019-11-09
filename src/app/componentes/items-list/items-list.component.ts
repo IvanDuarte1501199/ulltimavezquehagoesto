@@ -19,16 +19,19 @@ export class ItemsListComponent implements OnInit {
 
   obtenerItem(itemId: number) {
     this._itemRepoService.getItemById(itemId)
-    .subscribe(
-      (it) => this.itemSeleccionado = it
-    );
+      .subscribe(
+        (it) => this.itemSeleccionado = it
+      );
   }
 
   borrarItem(itemId: number) {
     this._itemRepoService.borrarItem(itemId)
-    .subscribe(
-      (response) => console.log('se borro el item ', response)
-    );
+      .subscribe(
+        (response) => {
+          console.log('se borro el item ', response);
+          this._itemRepoService.getAllItems();
+        }
+      );
   }
 
 }

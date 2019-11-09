@@ -2,13 +2,43 @@
   "items": [
     {
       "id": 1,
-      "cantidad": 2,
-      "descripcion": "",
-      "pu": 0,
+      "cantidad": 4,
+      "descripcion": "Coca Cola Zero 2.25L",
+      "pu": 75,
+      "IVA": "21.0",
+      "productoId": 5,
+      "facturaId": 2,
+      "subtotal": 363
+    },
+    {
+      "id": 2,
+      "cantidad": 3,
+      "descripcion": "Pañales Huggies x24u",
+      "pu": 345,
+      "IVA": "10.5",
+      "productoId": 3,
+      "facturaId": -1,
+      "subtotal": 1143.675
+    },
+    {
+      "id": 3,
+      "cantidad": 4,
+      "descripcion": "Sanguches Tia Rosa x6u",
+      "pu": 63.5,
+      "IVA": "10.5",
+      "productoId": 4,
+      "facturaId": -1,
+      "subtotal": 280.67
+    },
+    {
+      "id": 4,
+      "cantidad": 4,
+      "descripcion": "Sanguches Tia Rosa x6u",
+      "pu": 63.5,
       "IVA": "21.0",
       "productoId": 4,
-      "facturaId": 0,
-      "subtotal": 0
+      "facturaId": -1,
+      "subtotal": 307.34
     }
   ],
   "facturas": [
@@ -22,59 +52,19 @@
     },
     {
       "id": 3,
-      "tipo": "c",
-      "fecha": "6/11/2019",
+      "tipo": "32",
+      "fecha": "9/11/2019",
+      "numero": "232",
+      "ptoVenta": 321,
+      "clienteId": 41
+    },
+    {
+      "id": 4,
+      "tipo": "2",
+      "fecha": "9/11/2019",
       "numero": "2",
       "ptoVenta": 2,
-      "clienteId": 42
-    },
-    {
-      "id": 11,
-      "tipo": "1",
-      "fecha": "6/11/2019",
-      "numero": "2",
-      "ptoVenta": 1,
-      "clienteId": 48
-    },
-    {
-      "id": 17,
-      "tipo": "12",
-      "fecha": "6/11/2019",
-      "numero": "012",
-      "ptoVenta": 12,
-      "clienteId": 44
-    },
-    {
-      "id": 18,
-      "tipo": "12",
-      "fecha": "6/11/2019",
-      "numero": "4",
-      "ptoVenta": 4,
       "clienteId": 46
-    },
-    {
-      "id": 19,
-      "tipo": "c",
-      "fecha": "6/11/2019",
-      "numero": "5",
-      "ptoVenta": 5,
-      "clienteId": 43
-    },
-    {
-      "id": 20,
-      "tipo": "c",
-      "fecha": "6/11/2019",
-      "numero": "2",
-      "ptoVenta": 2,
-      "clienteId": 42
-    },
-    {
-      "id": 21,
-      "tipo": "c",
-      "fecha": "6/11/2019",
-      "numero": "2",
-      "ptoVenta": 2,
-      "clienteId": 42
     }
   ],
   "productos": [
