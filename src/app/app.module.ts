@@ -14,17 +14,16 @@ import { FacturasListComponent } from './componentes/facturas-list/facturas-list
 import { PantallaPrincipalComponent } from './pantalla-principal/pantalla-principal.component';
 import { ItemsListComponent } from './componentes/items-list/items-list.component';
 import { ItemsFormComponent } from './componentes/items-form/items-form.component';
-import { FacturasFormAddComponent } from './componentes/facturas-form-add/facturas-form-add.component';
-import { ItemsFormAddComponent } from './componentes/items-form-add/items-form-add.component';
+import { PantallaVerDetalleFacturaComponent } from './pantalla-ver-detalle-factura/pantalla-ver-detalle-factura.component';
 
 const rutas: Routes = [
   {path: 'clientes', component: ClientesListComponent },
   {path: 'productos', component: ProductosListComponent },
   {path: 'facturas', component: FacturasListComponent },
   {path: 'facturas-form', component: FacturasFormComponent },
-  {path: 'facturas-form-add', component: FacturasFormAddComponent },
   {path: 'items', component: ItemsListComponent },
-  {path: '', component: PantallaPrincipalComponent }
+  {path: '', component: PantallaPrincipalComponent },
+  {path: 'pantalla-principal', component: PantallaVerDetalleFacturaComponent}
   ];
 
 @NgModule({
@@ -39,8 +38,7 @@ const rutas: Routes = [
     PantallaPrincipalComponent,
     ItemsListComponent,
     ItemsFormComponent,
-    FacturasFormAddComponent,
-    ItemsFormAddComponent
+    PantallaVerDetalleFacturaComponent,
   ],
   imports: [
     BrowserModule,

@@ -44,4 +44,9 @@ export class FacturasListComponent implements OnInit {
         }
       );
   }
+
+  mostrarDetalle(facturaId: number){
+    this._facturaRepoService.facturaAVer(facturaId);
+    window.location.href = '/pantalla-principal';
+  }
 }

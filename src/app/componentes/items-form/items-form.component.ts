@@ -23,7 +23,7 @@ export class ItemsFormComponent implements OnInit {
 
   ngOnInit() {
     this.listaProductos = this._productsRepoService.devolverProductos();
-    this.listaFacturas = this._facturaRepoSerice.devolverFacturas();
+    
   }
 
   grabarItem() {
@@ -45,8 +45,9 @@ export class ItemsFormComponent implements OnInit {
                 }
               );
           } else {
-            
-            this.nuevoItem.facturaId = this._facturaRepoSerice.getIdUltimaFactura(this.listaFacturas);
+
+            this._facturaRepoSerice.getAllFacturas();
+            this.nuevoItem.facturaId = this._facturaRepoSerice.getIdUltimaFactura();
 
             this.nuevoItem.descripcion = pd.descripcion;
             this.nuevoItem.pu = pd.pu;

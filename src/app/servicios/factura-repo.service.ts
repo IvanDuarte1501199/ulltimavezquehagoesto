@@ -8,12 +8,13 @@ import { HttpClient } from '@angular/common/http';
 export class FacturaRepoService {
 
   listadoFacturas: factura[] = [];
+  factura_a_ver: factura;
   constructor(private _httpClient: HttpClient) { }
   getAllFacturas() {
     this._httpClient.get<factura[]>('http://localhost:3000/facturas')
-    .subscribe(
-      (data) => this.listadoFacturas = data
-    );
+      .subscribe(
+        (data) => this.listadoFacturas = data
+      );
   }
 
   getFacturaById(facturaId: number) {
@@ -28,24 +29,35 @@ export class FacturaRepoService {
     return this._httpClient.delete(`http://localhost:3000/facturas/${facturaId}`);
   }
 
-  actualizarFactura(factura: factura){
+  actualizarFactura(factura: factura) {
     return this._httpClient.put(`http://localhost:3000/facturas/${factura.id}`, factura);
   }
 
+  facturaAVer(facturaId: number) {
+    if (facturaId != 0) {
+      this._httpClient.get<factura>(`http://localhost:3000/facturas/${facturaId}`)
+        .subscribe(
+          (data) => this.factura_a_ver = data
+        );
+    } else {
+      return this.factura_a_ver
+    }
+  }
 
   devolverFacturas() {
     this._httpClient.get<factura[]>('http://localhost:3000/facturas')
-    .subscribe(
-      (data) => this.listadoFacturas = data
-    );
+      .subscribe(
+        (data) => this.listadoFacturas = data
+      );
     return this.listadoFacturas;
   }
 
- 
-  getIdUltimaFactura(listaFact: factura[]) {
+
+  getIdUltimaFactura() {
     let maxId = -1;
     console.log('antes del for');
-    for (let element of listaFact) {
+    this.getAllFacturas();
+    for (let element of this.devolverFacturas()) {
       console.log('dentro del for');
       if (element.id > maxId) {
         console.log(element.id);

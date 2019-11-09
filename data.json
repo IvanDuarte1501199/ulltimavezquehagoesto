@@ -2,43 +2,13 @@
   "items": [
     {
       "id": 1,
-      "cantidad": 4,
-      "descripcion": "Coca Cola Zero 2.25L",
-      "pu": 75,
-      "IVA": "21.0",
-      "productoId": 5,
-      "facturaId": 2,
-      "subtotal": 363
-    },
-    {
-      "id": 2,
-      "cantidad": 3,
-      "descripcion": "Pañales Huggies x24u",
-      "pu": 345,
-      "IVA": "10.5",
-      "productoId": 3,
-      "facturaId": -1,
-      "subtotal": 1143.675
-    },
-    {
-      "id": 3,
-      "cantidad": 4,
+      "cantidad": 2,
       "descripcion": "Sanguches Tia Rosa x6u",
       "pu": 63.5,
       "IVA": "10.5",
       "productoId": 4,
       "facturaId": -1,
-      "subtotal": 280.67
-    },
-    {
-      "id": 4,
-      "cantidad": 4,
-      "descripcion": "Sanguches Tia Rosa x6u",
-      "pu": 63.5,
-      "IVA": "21.0",
-      "productoId": 4,
-      "facturaId": -1,
-      "subtotal": 307.34
+      "subtotal": 140.335
     }
   ],
   "facturas": [
@@ -60,11 +30,11 @@
     },
     {
       "id": 4,
-      "tipo": "2",
+      "tipo": "c",
       "fecha": "9/11/2019",
-      "numero": "2",
-      "ptoVenta": 2,
-      "clienteId": 46
+      "numero": "4",
+      "ptoVenta": 4,
+      "clienteId": 42
     }
   ],
   "productos": [
