@@ -12,14 +12,14 @@ export class ProductoRepoService {
   constructor(private _httpClient: HttpClient) { }
 
   getAllProductos() {
-    this._httpClient.get<producto[]>('http://localhost:3000/productos')
+    this._httpClient.get<producto[]>('http://localhost:4000/api/productos')
     .subscribe(
       (data) => this.listadoProductos = data
     );
   }
 
   devolverProductos() {
-    this._httpClient.get<producto[]>('http://localhost:3000/productos')
+    this._httpClient.get<producto[]>('http://localhost:4000/api/productos')
       .subscribe((data) => {
         this.listadoProductos = data;
       });
@@ -27,18 +27,18 @@ export class ProductoRepoService {
   }
 
   getProductoById(productoId: number) {
-    return this._httpClient.get<producto>(`http://localhost:3000/productos/${productoId}`);
+    return this._httpClient.get<producto>(`http://localhost:4000/api/productos/${productoId}`);
   }
 
   agregarProducto(nuevoProducto: producto) {
-    return this._httpClient.post('http://localhost:3000/productos', nuevoProducto);
+    return this._httpClient.post('http://localhost:4000/api/productos', nuevoProducto);
   }
 
   borrarProducto(productoId: number) {
-    return this._httpClient.delete(`http://localhost:3000/productos/${productoId}`);
+    return this._httpClient.delete(`http://localhost:4000/api/productos/${productoId}`);
   }
 
   actualizarProducto(producto: producto) {
-    return this._httpClient.put(`http://localhost:3000/productos/${producto.id}`, producto);
+    return this._httpClient.put(`http://localhost:4000/api/productos/${producto.id}`, producto);
   }
 }

@@ -11,31 +11,31 @@ export class FacturaRepoService {
   factura_a_ver: factura;
   constructor(private _httpClient: HttpClient) { }
   getAllFacturas() {
-    this._httpClient.get<factura[]>('http://localhost:3000/facturas')
+    this._httpClient.get<factura[]>('http://localhost:4000/api/facturas')
       .subscribe(
         (data) => this.listadoFacturas = data
       );
   }
 
   getFacturaById(facturaId: number) {
-    return this._httpClient.get<factura>(`http://localhost:3000/facturas/${facturaId}`);
+    return this._httpClient.get<factura>(`http://localhost:4000/api/facturas/${facturaId}`);
   }
 
   agregarFactura(nuevaFactura: factura) {
-    return this._httpClient.post('http://localhost:3000/facturas', nuevaFactura);
+    return this._httpClient.post('http://localhost:4000/api/facturas', nuevaFactura);
   }
 
   borrarFactura(facturaId: number) {
-    return this._httpClient.delete(`http://localhost:3000/facturas/${facturaId}`);
+    return this._httpClient.delete(`http://localhost:4000/api/facturas/${facturaId}`);
   }
 
   actualizarFactura(factura: factura) {
-    return this._httpClient.put(`http://localhost:3000/facturas/${factura.id}`, factura);
+    return this._httpClient.put(`http://localhost:4000/api/facturas/${factura.id}`, factura);
   }
 
   facturaAVer(facturaId: number) {
     if (facturaId != 0) {
-      this._httpClient.get<factura>(`http://localhost:3000/facturas/${facturaId}`)
+      this._httpClient.get<factura>(`http://localhost:4000/api/facturas/${facturaId}`)
         .subscribe(
           (data) => this.factura_a_ver = data
         );
@@ -45,7 +45,7 @@ export class FacturaRepoService {
   }
 
   devolverFacturas() {
-    this._httpClient.get<factura[]>('http://localhost:3000/facturas')
+    this._httpClient.get<factura[]>('http://localhost:4000/api/facturas')
       .subscribe(
         (data) => this.listadoFacturas = data
       );

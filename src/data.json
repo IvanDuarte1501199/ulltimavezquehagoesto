@@ -2,25 +2,13 @@
   "items": [
     {
       "id": 1,
-      "cantidad": 1,
-      "codigo": "string",
-      "descripcion": "string",
-      "pu": 1,
-      "IVA": 1,
-      "subtotal": 1,
-      "productoId": 1,
-      "facturaId": 1
-    },
-    {
-      "id": 2,
-      "cantidad": "1",
-      "codigo": "-1",
-      "descripcion": "-1",
-      "pu": 0,
-      "IVA": 0,
-      "subtotal": 2,
-      "productoId": 0,
-      "facturaId": 0
+      "cantidad": 3,
+      "descripcion": "Coca Cola 2.5L",
+      "pu": 85,
+      "IVA": "10.5",
+      "productoId": 7,
+      "facturaId": 9,
+      "subtotal": 375.7
     }
   ],
   "facturas": [
@@ -47,6 +35,14 @@
       "numero": "24",
       "ptoVenta": 1,
       "clienteId": 45
+    },
+    {
+      "id": 9,
+      "tipo": "as",
+      "fecha": "26/11/2019",
+      "numero": "4324",
+      "ptoVenta": 444,
+      "clienteId": 42
     }
   ],
   "productos": [
@@ -125,10 +121,10 @@
       "cuit": "20429915647"
     },
     {
-      "id": 46,
-      "nombre": "anana",
-      "cuit": "1421412",
-      "direccion": "dadada"
+      "id": 47,
+      "nombre": "prueba26",
+      "direccion": "26",
+      "cuit": "266666"
     }
   ]
 }

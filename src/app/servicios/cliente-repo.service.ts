@@ -13,13 +13,13 @@ export class ClienteRepoService {
   constructor(private _httpClient: HttpClient) { }
 
   getAllClientes() {
-    this._httpClient.get<cliente[]>('http://localhost:3000/clientes')
+    this._httpClient.get<cliente[]>('http://localhost:4000/api/clientes')
     .subscribe(
       (data) => this.listadoClientes = data
     );
   }
   devolverClientes() {
-    this._httpClient.get<cliente[]>('http://localhost:3000/clientes')
+    this._httpClient.get<cliente[]>('http://localhost:4000/api/clientes')
     .subscribe(
       (data) => this.listadoClientes = data
     );
@@ -27,18 +27,18 @@ export class ClienteRepoService {
   }
 
   getClienteById(clienteId: number) {
-    return this._httpClient.get<cliente>(`http://localhost:3000/clientes/${clienteId}`);
+    return this._httpClient.get<cliente>(`http://localhost:4000/api/clientes/${clienteId}`);
   }
 
   agregarCliente(nuevoCliente: cliente) {
-    return this._httpClient.post('http://localhost:3000/clientes', nuevoCliente);
+    return this._httpClient.post('http://localhost:4000/api/clientes', nuevoCliente);
   }
 
   borrarCliente(clienteId: number) {
-    return this._httpClient.delete(`http://localhost:3000/clientes/${clienteId}`);
+    return this._httpClient.delete(`http://localhost:4000/api/clientes/${clienteId}`);
   }
 
   actualizarCliente(cliente: cliente){
-    return this._httpClient.put(`http://localhost:3000/clientes/${cliente.id}`, cliente);
+    return this._httpClient.put(`http://localhost:4000/api/clientes/${cliente.id}`, cliente);
   }
 }

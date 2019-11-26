@@ -13,7 +13,7 @@ export class ItemRepoService {
   constructor(private _httpClient: HttpClient) { }
 
   getAllItems() {
-    this._httpClient.get<item[]>('http://localhost:3000/items')
+    this._httpClient.get<item[]>('http://localhost:4000/api/items')
       .subscribe(
         (data) => this.listadoItems = data
       );
@@ -21,7 +21,7 @@ export class ItemRepoService {
 
 
   getListaFIltrada(id: number) {
-    this._httpClient.get<item[]>('http://localhost:3000/items')
+    this._httpClient.get<item[]>('http://localhost:4000/api/items')
       .subscribe(
         (data) => {
           this.listaFiltrada = data.filter((x) => x.facturaId === id);
@@ -33,18 +33,18 @@ export class ItemRepoService {
   }
 
   getItemById(itemId: number) {
-    return this._httpClient.get<item>(`http://localhost:3000/items/${itemId}`);
+    return this._httpClient.get<item>(`http://localhost:4000/api/items/${itemId}`);
   }
 
   agregarItem(nuevoItem: item) {
-    return this._httpClient.post('http://localhost:3000/items', nuevoItem);
+    return this._httpClient.post('http://localhost:4000/api/items', nuevoItem);
   }
 
   borrarItem(itemId: number) {
-    return this._httpClient.delete(`http://localhost:3000/items/${itemId}`);
+    return this._httpClient.delete(`http://localhost:4000/api/items/${itemId}`);
   }
 
   actualizarItem(item: item) {
-    return this._httpClient.put(`http://localhost:3000/items/${item.id}`, item);
+    return this._httpClient.put(`http://localhost:4000/api/items/${item.id}`, item);
   }
 }
